@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_attendees: 1
+  duration: 2021-05-31 01:29:33
+  group: one
+
+two:
+  number_of_attendees: 1
+  duration: 2021-05-31 01:29:33
+  group: two
