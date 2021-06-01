@@ -1,7 +1,4 @@
 class Concert < ApplicationRecord
   belongs_to :group
-  
-  def to_s
-      name
-  end
+  validates :number_of_attendees, presence: true
 end

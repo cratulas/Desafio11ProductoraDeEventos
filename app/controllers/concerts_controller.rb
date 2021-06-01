@@ -3,7 +3,7 @@ class ConcertsController < ApplicationController
 
   # GET /concerts or /concerts.json
   def index
-    @concerts = Concert.all
+    @concerts = Concert.eager_load(:group)
   end
 
   # GET /concerts/1 or /concerts/1.json
@@ -24,7 +24,7 @@ class ConcertsController < ApplicationController
   # POST /concerts or /concerts.json
   def create
     @concert = Concert.new(concert_params)
-
+    @groups = Group.all
     respond_to do |format|
       if @concert.save
         format.html { redirect_to @concert, notice: "Concert was successfully created." }

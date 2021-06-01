@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
-  before_action :set_statuses, only: %i[edit new]
+  before_action :set_statuses, only: %i[edit new create]
 
   # GET /groups or /groups.json
   def index
@@ -22,7 +22,9 @@ class GroupsController < ApplicationController
 
   # POST /groups or /groups.json
   def create
+    
     @group = Group.new(group_params)
+    @groups = Group.all
 
     respond_to do |format|
       if @group.save
