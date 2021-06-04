@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Current month concerts </th>
+      <th>Last concert</th>
+      <th>Maximum attendees </th>
+      <th>Longer duration </th>
+    </tr>
+  </thead>
 
-<div class="card-body">
+  <tbody>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @group.name %>
-  </p>
-  
-  <p>
-    <strong>Number of members:</strong>
-    <%= @group.number_of_members %>
-  </p>
-  
-  <p>
-    <strong>Debut date:</strong>
-    <%= @group.debut_date %>
-  </p>
-  
-  <p>
-    <strong>Status:</strong>
-    <%= @group.status %>
-  </p>
-  
-  <%= link_to 'Edit', edit_group_path(@group) %> |
-  <%= link_to 'Back', groups_path %>
-  
+      <tr>
+        <td><%= @group.name  %></td>
+        <td><%= @group.how_many_concerts  %></td>
+        <td><%= @group.last_concert %></td>
+        <td><%= @group.maximum_attendees %></td>
+        <td><%= @group.longer_duration %></td>
+      </tr>
+  </tbody>
+</table>
 
-</div>
+<br>
+
+
+  <%= link_to 'Edit', edit_group_path(@group), class: "btn btn-warning" %> 
+  <%= link_to 'Back', groups_path , class: "btn btn-primary" %>
+  

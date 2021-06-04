@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_052933) do
+ActiveRecord::Schema.define(version: 2021_06_04_184951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "concerts", force: :cascade do |t|
     t.integer "number_of_attendees"
-    t.time "duration"
+    t.date "date"
     t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "duration"
     t.index ["group_id"], name: "index_concerts_on_group_id"
   end
 
