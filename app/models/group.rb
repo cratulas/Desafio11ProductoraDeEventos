@@ -6,4 +6,11 @@ class Group < ApplicationRecord
     def to_s
         name
     end
+
+    def concerts_counts
+        concerts.count
+        #TODO-implement
+    end
+    
+
 end
