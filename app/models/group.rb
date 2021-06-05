@@ -52,18 +52,20 @@ class Group < ApplicationRecord
     end
     
     def longer_duration
-        # b = concerts
-        # i = 0
-        # array = []
-        # total = 0
-        # while i < b.count
-        #     hour = b[i].duration.hour
-        #     minutes = b[i].duration.min
-        #     total = hour*60 + minutes
-        #     array.push(total)
-        #     i = i + 1
-        # end
-        # array
+        b = concerts
+        i = 0
+        array = []
+        total = 0
+        hour = 0
+        minutes = 0
+        while i < b.count
+            hour = b[i].duration.hour
+            minutes = b[i].duration.min
+            total = hour*60 + minutes
+            array.push(total)
+            i = i + 1
+        end
+        array.max
     end    
 
 
