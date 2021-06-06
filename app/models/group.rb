@@ -35,9 +35,12 @@ class Group < ApplicationRecord
     end
 
     def last_concert
+        a = []
         b = concerts
-        
-        
+        b.each_with_index do |val,index|
+            a.push(b[index].date.strftime("%C/%B/%A"))
+        end
+        a.max
     end
 
     def maximum_attendees
